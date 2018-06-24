@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.button)
     public void publicarMeuSensorLocation() {
-        List<String> sensorList = Arrays.asList("Goldfish 3-axis Accelerometer");
+        List<String> sensorList = Arrays.asList("Location");
         CommandRequest comandRequest = new CommandRequest("leonardo.machado@lsdi.ufma.br", new MOUUID(TechnologyID.INTERNAL.id, "localhost"), "start-sensors", sensorList);
 
         Log.d("Location", comandRequest.toString());
@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onConnectSuccess() {
-                subscriber.subscribe(Topic.of("leonardo.machado@lsdi.ufma.br/Goldfish 3-axis Accelerometer"));
+                subscriber.subscribe(Topic.of("leonardo.machado@lsdi.ufma.br/Location"));
                 Toast.makeText(getApplicationContext(), "vamos sobescrever", Toast.LENGTH_SHORT).show();
             }
 
